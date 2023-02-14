@@ -13,7 +13,7 @@ namespace UserRegistration
         {
             Regex rg = new Regex(Pattern.CheckFirstName);
 
-            Console.WriteLine("Enter User Name-");
+            Console.WriteLine("Enter User Last Name-");
             Console.WriteLine(rg.IsMatch(Console.ReadLine()));
             
         }
