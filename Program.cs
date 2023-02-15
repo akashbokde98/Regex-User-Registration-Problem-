@@ -11,6 +11,7 @@ namespace UserRegistration
         public static string checkphoneNumber = "^91[ ][0-9]+$";
         public static string checkPassword_1 = "^[A-Za-z]{8,}$";
         public static string checkPassword_2 = "^((?=.*)(?=.*[A-Z])(?=.*).{8,})$";
+        public static string checkPassword_3 = "^((?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,})$";
     }
     internal class Program
     {
@@ -40,6 +41,9 @@ namespace UserRegistration
             Console.WriteLine("Enter User Password-2 -");
             Console.WriteLine(rg6.IsMatch(Console.ReadLine()));
 
+            Regex rg7 = new Regex(Pattern.checkPassword_3);
+            Console.WriteLine("Enter User Password-3 -");
+            Console.WriteLine(rg7.IsMatch(Console.ReadLine()));
         }
     }
 }
