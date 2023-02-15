@@ -10,6 +10,7 @@ namespace UserRegistration
         public static string checkEmailId = "^[a-z{3,}]+[@+-.0-9a-z{3,}]+$";
         public static string checkphoneNumber = "^91[ ][0-9]+$";
         public static string checkPassword_1 = "^[A-Za-z]{8,}$";
+        public static string checkPassword_2 = "^((?=.*)(?=.*[A-Z])(?=.*).{8,})$";
     }
     internal class Program
     {
@@ -34,6 +35,10 @@ namespace UserRegistration
             Regex rg5 = new Regex(Pattern.checkPassword_1);
             Console.WriteLine("Enter User Password With Min 8 Character-");
             Console.WriteLine(rg5.IsMatch(Console.ReadLine()));
+
+            Regex rg6 = new Regex(Pattern.checkPassword_2);
+            Console.WriteLine("Enter User Password-2 -");
+            Console.WriteLine(rg6.IsMatch(Console.ReadLine()));
 
         }
     }
