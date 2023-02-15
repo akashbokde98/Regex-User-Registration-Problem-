@@ -12,6 +12,7 @@ namespace UserRegistration
         public static string checkPassword_1 = "^[A-Za-z]{8,}$";
         public static string checkPassword_2 = "^((?=.*)(?=.*[A-Z])(?=.*).{8,})$";
         public static string checkPassword_3 = "^((?=.*\\d)(?=.*[A-Z])(?=.*[a-z]).{8,})$";
+        public static string checkPassword_4 = "^((?=.*\\d)(?=.*\\W)(?=.*[A-Z])(?=.*[a-z]).{8,})$";
     }
     internal class Program
     {
@@ -44,6 +45,10 @@ namespace UserRegistration
             Regex rg7 = new Regex(Pattern.checkPassword_3);
             Console.WriteLine("Enter User Password-3 -");
             Console.WriteLine(rg7.IsMatch(Console.ReadLine()));
+
+            Regex rg8 = new Regex(Pattern.checkPassword_4);
+            Console.WriteLine("Enter User Password-4 -");
+            Console.WriteLine(rg8.IsMatch(Console.ReadLine()));
         }
     }
 }
